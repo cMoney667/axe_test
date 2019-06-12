@@ -1,5 +1,6 @@
 import os
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from axe_selenium_python import Axe
 
 print('Enter the site you would like to test')
@@ -28,7 +29,9 @@ if not os.path.exists(foldername):
 target_file = open(f'{foldername}/{no_dot_filename}-a11y.txt', 'w')
 target_file.write(f'Page tested: {target}')
 
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
 print(target)
 driver.get(target)
 axe = Axe(driver)
