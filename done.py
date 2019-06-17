@@ -10,4 +10,5 @@ for filename in os.listdir(foldername):
   with open(foldername+'/'+filename, 'r') as f:
     for line in f.readlines():
       done_file.write(line)
+  done_file.write('\n\n-------------------------------------------------------\n\n')
 done_file.write('\n\n\nTime to Complete 5-8 Hours')
