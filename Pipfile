@@ -9,6 +9,8 @@ autopep8 = "*"
 [packages]
 axe-selenium-python = "*"
 selenium = "*"
+requests = "*"
+lxml = "*"
 
 [requires]
 python_version = "3.7"
